@@ -110,6 +110,8 @@ namespace ModernHttpClient
 
             cancellationToken.ThrowIfCancellationRequested();
 
+            client.FollowRedirects = AllowAutoRedirect;
+
             var rq = builder.Build();
             var call = client.NewCall(rq);
 
